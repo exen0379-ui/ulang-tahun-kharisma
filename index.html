@@ -174,6 +174,184 @@ function createHeart(){
 
 setInterval(createHeart,300);
 </script>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Kharisma ❤️</title>
 
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff9ecf,#ffd6e8);
+    min-height:100vh;
+    overflow-x:hidden;
+    text-align:center;
+    color:white;
+}
+
+.container{
+    padding:40px 20px;
+}
+
+h1{
+    font-size:3rem;
+    margin-top:30px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px white;
+    }
+    to{
+        text-shadow:0 0 30px white;
+    }
+}
+
+.card{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:25px;
+    margin:30px auto;
+    max-width:700px;
+}
+
+button{
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#ff4fa3;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:1rem;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#surprise{
+    display:none;
+    margin-top:20px;
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+.countdown{
+    font-size:1.5rem;
+    margin-top:20px;
+}
+
+.heart{
+    position:fixed;
+    top:-10px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎂 Happy Birthday 🎂</h1>
+
+<h2>Kharisma Indah Fadhilah ❤️</h2>
+
+<div class="card">
+    <h3>4 November 2026</h3>
+    <div id="countdown" class="countdown"></div>
+</div>
+
+<div class="card">
+    <h2>Untukmu, Sayang ❤️</h2>
+    <p>
+        Hari ini adalah hari spesial untuk seseorang yang sangat berarti.
+        Semoga semua impianmu tercapai, kesehatan selalu menyertaimu,
+        dan kebahagiaan tak pernah jauh dari hidupmu.
+    </p>
+</div>
+
+<div class="card">
+    <button onclick="showMessage()">Klik Hadiahmu 🎁</button>
+
+    <div id="surprise">
+        <p>
+            Selamat ulang tahun, Kharisma Indah Fadhilah ❤️<br><br>
+
+            Terima kasih telah menjadi bagian dari hidupku.
+            Semoga di usia yang baru ini kamu semakin bahagia,
+            semakin sukses, dan selalu dikelilingi orang-orang yang mencintaimu.
+            <br><br>
+
+            Jangan pernah meragukan dirimu sendiri,
+            karena kamu adalah seseorang yang luar biasa.
+            <br><br>
+
+            Aku akan selalu mendoakan yang terbaik untukmu.
+            ❤️❤️❤️
+        </p>
+    </div>
+</div>
+
+</div>
+
+<script>
+function showMessage(){
+    document.getElementById("surprise").style.display="block";
+}
+
+const targetDate = new Date("November 4, 2026 00:00:00").getTime();
+
+setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+    const seconds = Math.floor((distance%(1000*60))/1000);
+
+    document.getElementById("countdown").innerHTML =
+    `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+},1000);
+
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(Math.random()*20+15)+"px";
+    heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
 </body>
   </html>
